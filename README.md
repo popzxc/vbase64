@@ -7,10 +7,12 @@ Implementation of `base64` encoding for [V](https://vlang.io/).
 ## Examples
 
 ```v
+import popzxc.vbase64
+
 some_bytes := [byte(10), 20, 30, 40, 50]
 
-encoded := base64.base64_encode(some_bytes)
-decoded := base64.base64_decode(encoded) or {
+encoded := vbase64.base64_encode(some_bytes)
+decoded := vbase64.base64_decode(encoded) or {
     panic("Incorrect string passed")
 }
 
