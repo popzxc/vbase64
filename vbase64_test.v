@@ -1,4 +1,4 @@
-import base64
+import popzxc.vbase64
 
 struct TestCase {
     input string
@@ -36,7 +36,7 @@ fn test_encode() {
     ]
 
     for test in test_vector {
-        res := base64.base64_encode(string_to_bytes(test.input))
+        res := vbase64.base64_encode(string_to_bytes(test.input))
         assert res == test.expected
     }
 }
@@ -62,7 +62,7 @@ fn test_decode() {
     ]
 
     for test in test_vector {
-        res := base64.base64_decode(test.input) or {
+        res := vbase64.base64_decode(test.input) or {
             panic("Fail")
         }
         assert string(res) == test.expected
@@ -72,7 +72,7 @@ fn test_decode() {
 fn test_decode_error() {
     incorrect_string := 'abcd,,,....'
 
-    res := base64.base64_decode(incorrect_string) or {
+    res := vbase64.base64_decode(incorrect_string) or {
         return
     }
 
@@ -87,8 +87,8 @@ fn test_roundtrip_all_bytes() {
         i += 1
     }
 
-    encoded := base64.base64_encode(all_possible_bytes)
-    decoded := base64.base64_decode(encoded) or {
+    encoded := vbase64.base64_encode(all_possible_bytes)
+    decoded := vbase64.base64_decode(encoded) or {
         panic("Fail")
     }
 
