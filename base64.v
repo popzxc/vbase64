@@ -12,7 +12,7 @@ const (
 )
 
 pub fn base64(v []byte) string {
-    mut result := "111"
+    mut result := ""
     mut d := 0
     mut a := 0
     mut l := v.len
