@@ -2,6 +2,9 @@
 
 Implementation of `base64` encoding for [V](https://vlang.io/).
 
+The only difference from `base64` implementation in the V stdlib is that this library works
+with byte sequences instead of strings.
+
 > The version of this module will remain in `0.x.x` unless the language API's are finalized and implemented.
 
 ## Examples
